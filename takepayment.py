@@ -19,15 +19,19 @@ google_pay_url = f'upi://pay?pa={upi_id}&pn=Recipient%20Name&mc=1234'
 
 #generating QR code for Phonepe
 phonepe_qr = qrcode.make(phonepe_url)
-phonepe_qr.save("phonepe_qr.png")
 
 #generating QR code for Paytm
 paytm_qr=qrcode.make(paytm_url)
-paytm_qr.save("paytm.png")
+
 
 #generating QR code for Google Pay
 google_pay_qr=qrcode.make(google_pay_url)
+
+#to save the QR codes as PNG files, you can use the save() method of the QR code object, as shown above. The generated PNG files will be saved in the current working directory with the specified names (phonepe_qr.png, paytm.png, google_pay.png).
+phonepe_qr.save("phonepe_qr.png")
+paytm_qr.save("paytm.png")
 google_pay_qr.save("google_pay.png")
+
 
 
 #to display the QR codes, you can use an image viewer or open the generated PNG files, for that yoy need to install PIL/Pillow library
